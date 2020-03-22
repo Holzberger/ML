@@ -20,9 +20,11 @@
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{fancyvrb}
-
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{picture}
 \begin{document}
-
+\graphicspath{{./figures/}}
 % ========== Edit your name here
 \author{Palle Morris e1160346\\ Elmenreich Jan e01526208\\ Holzberger Fabian e11921655 }
 \title{Machine Learing Exercise 0}
@@ -32,27 +34,80 @@
 
 \section{Introduction}
 Two datasets are analyzed, one for Classification and a second one for regression. The Datasets were choosen such that they have different characteristics. The Characteristics and more information about the datasets is listed in the table below.
-\newline
-
-\begin{tabular}{lll}
+\begin{table}[H]
+\begin{tabularx}{1.0\linewidth}{XXX}
 \hline
-Characteristic 		& Hepatitis 	& Airline   \\
+Characteristic 		& Hepatitis 	& House sales   \\
 Data Type 		& Multivariate 	& Multivariate \\
-Attribute Type  	& Integer,Real  & Integer, String\\
+Attribute Type  	& Integer,Real  & Integer, String, Real\\
 Associated Tasks	& Classification & Regression \\
-Number of instances     & 155 		 & 539383\\
-Number of Attributes    & 19 		& 8\\
+Number of instances     & 155 		 & 21436\\
+Number of Attributes    & 19 		& 20\\
 Missing Values 		& Yes 		& No \\
 \hline
-\end{tabular}
-\newline
+\end{tabularx}
+\end{table}
 
 
 
 \section{Hepatitis Dataset}
-
-\section{Airline Dataset}
-
+\newpage
+\section{House sales Dataset}
+This dataset contains $20$ attributes + \texttt{id}, which we will not count as an attribute. Our target attribute will be, as so often the \texttt{price}
+\begin{multicols}{2}
+\begin{itemize}
+\item \texttt{Price} Real (target) \\
+Price of each home sold
+\item \texttt{Date} String\\
+Date of the home sale 
+\item \texttt{Bedrooms} Integer\\
+Number of bedrooms
+\item \texttt{Bathrooms} Real\\
+Number of Bathrooms
+\item \texttt{Sqft\_living} Integer\\
+Square footage of the apartments interior living space
+\item \texttt{Sqft\_lot} Integer\\
+Square footage of the land space
+\item \texttt{Floors} Real\\
+Number of floors
+\item \texttt{Waterfront} Integer\\
+A dummy variable for whether the apartment was overlooking the waterfront or not
+\item \texttt{View} Integer\\
+An index from $0$ to $4$ of how good the view of the property was
+\item \texttt{Condition} Integer\\
+An index from $1$ to $5$ on the condition of the apartment
+\columnbreak
+\item \texttt{Grade} Integer\\
+An index from $1$ to $13$, where $1-3$ falls short of the building construction and design, $7$ has an average level of construction and design, and $11-13$ have a high quality level of construction and design
+\item \texttt{Sqft\_Above} Integer\\
+The square footage of the interior housing space that is above ground level
+\item \texttt{Sqft\_basement} Integer\\
+The square footage of the interior housing space that is below ground level
+\item \texttt{Yr\_built} Integer\\
+The year the house was initially built
+\item \texttt{Yr\_renovated} Integer\\
+The year of the house's last renovation
+\item \texttt{Zipcode} Integer\\
+What zipcode area the house is in
+\item \texttt{Lat} Real\\
+Lattitude 
+\item \texttt{Long} Real\\
+Longitude
+\item \texttt{Sqft\_living15} Integer\\
+The square footage of interior housing living space for the nearest $15$ neighbors
+\item \texttt{Sqft\_lot15} Integer\\
+The square footage of the land lots of the nearest $15$ neighbors
+\end{itemize}
+\end{multicols}
+In picture \ref{fig:HistrogrammsHouses} we can see the distribution of the target and other attributes.
+\begin{figure}[H]
+\begin{picture}(400,390)
+\put(0,180){\includegraphics[width=1.0\linewidth]{HistogrammHouses1.pdf}}
+\put(0,-20){\includegraphics[width=1.0\linewidth]{HistogrammHouses2.pdf}}
+\end{picture}
+\caption{Histogramms of attributes}
+\label{fig:HistrogrammsHouses}
+\end{figure}
 \end{document}
 \grid
 \grid

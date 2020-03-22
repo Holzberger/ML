@@ -1,33 +1,4 @@
-% This dataset contains house sale prices for King County, which includes Seattle. It includes homes sold between May 2014 and May 2015.
-%
-% It contains 19 house features plus the price and the id columns, along with 21613 observations.
-% It's a great dataset for evaluating simple regression models.
-%
-@RELATION house_sales
-
-@ATTRIBUTE id INTEGER
-@ATTRIBUTE date STRING
-@ATTRIBUTE price REAL
-@ATTRIBUTE bedrooms INTEGER
-@ATTRIBUTE bathrooms REAL
-@ATTRIBUTE sqft_living INTEGER
-@ATTRIBUTE sqft_lot INTEGER
-@ATTRIBUTE floors REAL
-@ATTRIBUTE waterfront INTEGER
-@ATTRIBUTE view INTEGER
-@ATTRIBUTE condition INTEGER
-@ATTRIBUTE grade INTEGER
-@ATTRIBUTE sqft_above INTEGER
-@ATTRIBUTE sqft_basement INTEGER
-@ATTRIBUTE yr_built INTEGER
-@ATTRIBUTE yr_renovated INTEGER
-@ATTRIBUTE zipcode INTEGER
-@ATTRIBUTE lat REAL
-@ATTRIBUTE long REAL
-@ATTRIBUTE sqft_living15 INTEGER
-@ATTRIBUTE sqft_lot15 INTEGER
-
-@DATA
+id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,view,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
 7129300520,20141013T000000,221900.0,3,1.0,1180,5650,1.0,0,0,3,7,1180,0,1955,0,98178,47.5112,-122.257,1340,5650
 6414100192,20141209T000000,538000.0,3,2.25,2570,7242,2.0,0,0,3,7,2170,400,1951,1991,98125,47.721000000000004,-122.319,1690,7639
 5631500400,20150225T000000,180000.0,2,1.0,770,10000,1.0,0,0,3,6,770,0,1933,0,98028,47.7379,-122.23299999999999,2720,8062
