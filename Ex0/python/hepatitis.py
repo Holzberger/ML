@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-mylink = '/home/fabianh/ML/ML/Ex0/datasets/hepatitis.data'
+mylink = '../datasets/hepatitis.data'
 
 df     = pd.read_table(mylink,header=None, delimiter=",")
 
