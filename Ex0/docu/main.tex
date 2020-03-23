@@ -2,11 +2,13 @@
 
 \newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
 
-\topmargin -.5in
+\topmargin -.9in
 \textheight 9in
 \oddsidemargin -.25in
 \evensidemargin -.25in
 \textwidth 7in
+
+\setlength\parindent{0pt}
 
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{lastpage}
@@ -30,10 +32,11 @@
 \title{Machine Learing Exercise 0}
 \maketitle
 
-\medskip
+%\medskip
+
 
 \section{Introduction}
-Two datasets are analyzed, one for Classification and a second one for regression. The Datasets were chosen such that they have different characteristics. The Characteristics and more information about the datasets is listed in the table [\ref{tab:char1}].
+Two datasets are analyzed, one for classification and a second one for regression. The datasets were chosen such that they have different characteristics. The characteristics and more information about the datasets is listed in the table [\ref{tab:char1}].
 \begin{table}[H]
 \begin{tabularx}{1.0\linewidth}{XXX}
 \hline
@@ -50,25 +53,29 @@ Missing Values 		& Yes 		& No \\
 \caption{Characteristics of the datasets of choice}
 \end{table}
 
+We call the mammographic mass dataset and the house sales dataset, dataset 2. Dataset1 is used for classification and dataset 2 is used for regression. They both are multivariate wherein the difference can be seen in their dimensionality which is the number of attributes. Here dataset 2 has about 3 times higher dimesnionality than dataset 1. Moreover, dataset 2 has a wider variety of attribute types with integer, strings and real numbers where dataset 1 contains merely integers. Additionally, dataset 2 has about 20 times more instances than dataset 1 and dosent contain any missing values which dataset 1 does.
 
+%\newpage
 
 \section{Mammographic Dataset}
-This dataset includes 6 Attributes, we summarize them below
+This dataset includes 6 Attributes, we summarize and explain them below
 
 \begin{multicols}{2}
 \begin{itemize}
+\item \texttt{BI-RADS} Integer (non-predictive)\\
+ BI-RADS assessment ranging from 1 (definitely benign)
+to 5 (highly suggestive of malignancy). Can be an indication of how well a CAD system performs compared to the radiologists.
+\columnbreak
 \item \texttt{Serverity} Bool (target) \\
 classification by 1 for benign or 0 for malignant
 \item \texttt{Age} Integer  \\
 Age of the specimen
+\end{itemize}
+\begin{itemize}
 \item \texttt{Shape} Integer  \\
 mass shape: round=1 oval=2 lobular=3 irregular=4 (nominal) 
 \item \texttt{Margin} Integer  \\
 mass margin: circumscribed=1 microlobulated=2 obscured=3 ill-defined=4 spiculated=5 
-\columnbreak
-\item \texttt{BI-RADS} Integer (non-predictive)\\
- BI-RADS assessment ranging from 1 (definitely benign)
-to 5 (highly suggestive of malignancy). Can be an indication of how well a CAD system performs compared to the radiologists.
 \item \texttt{Density} Integer  \\
 mass density: high=1 iso=2 low=3 fat-containing=4
 \end{itemize}
@@ -87,13 +94,17 @@ BI-RADS & Age &Shape &Margin & Density & Serverity  \\
 \caption{Missing values for mammograph dataset}
 \end{table}
 
+While inspecting the dataset, one instance with a BI-RADS value of 55 was found which, is an error since the range of this attribute is 5 at maximum. We correct is to the value of 5. 
+
 The distributions of the dataset attributes can be found in figure [\ref{fig:Mamm}].
 
-\begin{figure}[H]
-\includegraphics[width=1.0\linewidth]{Mammograph.pdf}
+\begin{figure}[H]\center
+\includegraphics[width=0.8\linewidth]{Mammograph.pdf}
 \caption{Histogramms of mammograpic dataset attributes}
 \label{fig:Mamm}
 \end{figure}
+
+In the figure we see that the target attribute severity is binomial. The severe cases are 445 where the non-severe cases are 516 which is slightly not equal. In the BI-RADS attribute that contains ordinal values most values are in class 4 with about 500 followed by class 5 with about 350 values. It can be seen that the age (integer) of the patients is approximately normal distributed around the age 60 with a range of 20 to 90 years. The age is represented as integer value. For the shape attribute (ordinal) class 4 occurs is dominant with about 400 instances followed by class 1 and 2 with slightly more than 200 instances each and class 3 with 100 instances. Next in the margin (ordinal) attribute we see a range of 5 represented classes. Here class 1 and 4 are dominant with about 400 instances for the former and about 300 for the latter one. Lastly in the density (ordinal) attribute only class 3 shows dominance with about 800 occurrences where the other classes 1,2 and 3 occur in less than 100 instances.
 
 \newpage
 \section{House sales Dataset}
