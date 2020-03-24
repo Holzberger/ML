@@ -53,7 +53,7 @@ Missing Values 		& Yes 		& No \\
 \caption{Characteristics of the datasets of choice}
 \end{table}
 
-We call the mammographic mass dataset and the house sales dataset, dataset 2. Dataset1 is used for classification and dataset 2 is used for regression. They both are multivariate wherein the difference can be seen in their dimensionality which is the number of attributes. Here dataset 2 has about 3 times higher dimesnionality than dataset 1. Moreover, dataset 2 has a wider variety of attribute types with integer, strings and real numbers where dataset 1 contains merely integers. Additionally, dataset 2 has about 20 times more instances than dataset 1 and dosent contain any missing values which dataset 1 does.
+We call the mammographic mass dataset 1 and the house sales dataset, dataset 2. Dataset 1 is used for classification and dataset 2 is used for regression. They both are multivariate wherein the difference can be seen in their dimensionality, which is the number of attributes. Here dataset 2 has about 3 times higher dimensionality than dataset 1. Moreover, dataset 2 has a wider variety of attribute types with integer, strings and real numbers where dataset 1 contains merely integers. Additionally, dataset 2 has about 20 times more instances than dataset 1 and dosent contain any missing values which dataset 1 does.
 
 %\newpage
 
@@ -94,7 +94,7 @@ BI-RADS & Age &Shape &Margin & Density & Serverity  \\
 \caption{Missing values for mammograph dataset}
 \end{table}
 
-While inspecting the dataset, one instance with a BI-RADS value of 55 was found which, is an error since the range of this attribute is 5 at maximum. We correct is to the value of 5. 
+While inspecting the dataset, one instance with a BI-RADS value of 55 was found which, is an error since the range of this attribute is 5 at maximum. We correct this to the value of 5. 
 
 The distributions of the dataset attributes can be found in figure [\ref{fig:Mamm}].
 
@@ -154,15 +154,18 @@ The square footage of interior housing living space for the nearest $15$ neighbo
 The square footage of the land lots of the nearest $15$ neighbors
 \end{itemize}
 \end{multicols}
+\newpage
 In figure [\ref{fig:HistrogrammsHouses}] we can see the distribution of the target and other attributes.
+
 \begin{figure}[H]
 \begin{picture}(400,390)
-\put(0,180){\includegraphics[width=1.0\linewidth]{HistogrammHouses1.pdf}}
-\put(0,-20){\includegraphics[width=1.0\linewidth]{HistogrammHouses2.pdf}}
+\put(0,185){\includegraphics[width=1.0\linewidth]{Price.pdf}}
+\put(0,-20){\includegraphics[width=1.0\linewidth]{Histogramm.pdf}}
 \end{picture}
-\caption{Histogramms of attributes}
+\caption{Histogramms of attributes and target attribute}
 \label{fig:HistrogrammsHouses}
 \end{figure}
+For one instance we encountered a rather high value of $33$ bedrooms. After comparing more attributes to different instances, we decided that it could have been a typographical error and changed the value to $3$ bedrooms.
 \end{document}
 \grid
 \grid
