@@ -111,46 +111,46 @@ In the figure we see that the target attribute severity is binomial. The severe 
 This dataset contains $20$ attributes + \texttt{id}, which we will not count as an attribute. Our target attribute will be, as so often the \texttt{price}
 \begin{multicols}{2}
 \begin{itemize}
-\item \texttt{Price} Real (target) \\
+\item \texttt{Price} [Real Interval] (target) \\
 Price of each home sold
-\item \texttt{Date} String\\
+\item \texttt{Date} [String Interval]\\
 Date of the home sale 
-\item \texttt{Bedrooms} Integer\\
+\item \texttt{Bedrooms} [Integer Ratio]\\
 Number of bedrooms
-\item \texttt{Bathrooms} Real\\
+\item \texttt{Bathrooms} [Real Ratio]\\
 Number of Bathrooms
-\item \texttt{Sqft\_living} Integer\\
+\item \texttt{Sqft\_living} [Integer Ratio]\\
 Square footage of the apartments interior living space
-\item \texttt{Sqft\_lot} Integer\\
+\item \texttt{Sqft\_lot} [Integer Ratio]\\
 Square footage of the land space
-\item \texttt{Floors} Real\\
+\item \texttt{Floors} [Real Ratio]\\
 Number of floors
-\item \texttt{Waterfront} Integer\\
+\item \texttt{Waterfront} [Integer Ordinal] \\
 A dummy variable for whether the apartment was overlooking the waterfront or not
-\item \texttt{View} Integer\\
+\item \texttt{View} [Integer Ordinal]\\
 An index from $0$ to $4$ of how good the view of the property was
-\item \texttt{Condition} Integer\\
+\item \texttt{Condition} [Integer Ordinal]\\
 An index from $1$ to $5$ on the condition of the apartment
 \columnbreak
-\item \texttt{Grade} Integer\\
+\item \texttt{Grade} [Integer Ordinal]\\
 An index from $1$ to $13$, where $1-3$ falls short of the building construction and design, $7$ has an average level of construction and design, and $11-13$ have a high quality level of construction and design
-\item \texttt{Sqft\_Above} Integer\\
+\item \texttt{Sqft\_Above} [Integer Ratio]\\
 The square footage of the interior housing space that is above ground level
-\item \texttt{Sqft\_basement} Integer\\
+\item \texttt{Sqft\_basement} [Integer Ratio]\\
 The square footage of the interior housing space that is below ground level
-\item \texttt{Yr\_built} Integer\\
+\item \texttt{Yr\_built} [Integer Nominal]\\
 The year the house was initially built
-\item \texttt{Yr\_renovated} Integer\\
+\item \texttt{Yr\_renovated} [Integer Nominal]\\
 The year of the house's last renovation
-\item \texttt{Zipcode} Integer\\
+\item \texttt{Zipcode} [Integer Nominal]\\
 What zipcode area the house is in
-\item \texttt{Lat} Real\\
+\item \texttt{Lat} [Real Nominal]\\
 Latitude 
-\item \texttt{Long} Real\\
+\item \texttt{Long} [Real Nominal]\\
 Longitude
-\item \texttt{Sqft\_living15} Integer\\
+\item \texttt{Sqft\_living15} [Integer Ratio]\\
 The square footage of interior housing living space for the nearest $15$ neighbors
-\item \texttt{Sqft\_lot15} Integer\\
+\item \texttt{Sqft\_lot15} [Integer Ratio]\\
 The square footage of the land lots of the nearest $15$ neighbors
 \end{itemize}
 \end{multicols}
@@ -165,7 +165,7 @@ In figure [\ref{fig:HistrogrammsHouses}] we can see the distribution of the targ
 \caption{Histogramms of attributes and target attribute}
 \label{fig:HistrogrammsHouses}
 \end{figure}
-For one instance we encountered a rather high value of $33$ bedrooms. After comparing more attributes to different instances, we decided that it could have been a typographical error and changed the value to $3$ bedrooms.
+For one instance we encountered a rather high value of $33$ bedrooms. After comparing more attributes to different instances, we decided that it could have been a typographical error and changed the value to $3$ bedrooms. Except one attribute (\texttt{date}), we have numeric values, with no missing values and different scales. Therefore we assume that no pre-processing is needed. It may be that we need to normalize the attribute \texttt{price}, since as one can see from his distribution in figure [\ref{fig:HistrogrammsHouses}] it's high values could have an impact on the machine learning.
 \end{document}
 \grid
 \grid
